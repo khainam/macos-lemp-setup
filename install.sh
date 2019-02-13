@@ -148,17 +148,17 @@ echo "${yellow}Installing PHP.${txtreset}"
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
-brew install php70
+brew install php72
 mkdir -p ~/Library/LaunchAgents
-cp /usr/local/opt/php70/homebrew.mxcl.php70.plist ~/Library/LaunchAgents/
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
+cp /usr/local/opt/php72/homebrew.mxcl.php72.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php72.plist
 lsof -Pni4 | grep LISTEN | grep php
-sudo touch /var/log/fpm7.0-php.slow.log
-sudo chmod 775 /var/log/fpm7.0-php.slow.log
-sudo chown "$USER":staff /var/log/fpm7.0-php.slow.log
-sudo touch /var/log/fpm7.0-php.www.log
-sudo chmod 775 /var/log/fpm7.0-php.www.log
-sudo chown "$USER":staff /var/log/fpm7.0-php.www.log
+sudo touch /var/log/fpm7.2-php.slow.log
+sudo chmod 775 /var/log/fpm7.2-php.slow.log
+sudo chown "$USER":staff /var/log/fpm7.2-php.slow.log
+sudo touch /var/log/fpm7.2-php.www.log
+sudo chmod 775 /var/log/fpm7.2-php.www.log
+sudo chown "$USER":staff /var/log/fpm7.2-php.www.log
 echo "${boldgreen}PHP installed and running.${txtreset}"
 echo "${yellow}Installing MariaDB.${txtreset}"
 brew install mariadb
@@ -196,8 +196,8 @@ sudo brew services stop dnsmasq
 sudo brew services start dnsmasq
 sudo brew services stop nginx
 sudo brew services start nginx
-sudo brew services stop php70
-sudo brew services start php70
+sudo brew services stop php72
+sudo brew services start php72
 brew services stop mariadb
 brew services start mariadb
 sudo brew services list
